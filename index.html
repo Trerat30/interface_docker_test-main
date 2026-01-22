@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Hospital System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🏥 Mini Hospital Management System</h1>
+
+<!-- ================= PATIENT ================= -->
+<section>
+    <h2>👤 ลงทะเบียนผู้ป่วย</h2>
+    <div class="form">
+        <input type="text" id="pname" placeholder="ชื่อผู้ป่วย">
+        <input type="number" id="page" placeholder="อายุ">
+        <input type="text" id="pphone" placeholder="เบอร์โทร">
+        <input type="file" id="pimage" accept="image/*">
+        <button onclick="addPatient()">เพิ่มผู้ป่วย</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>รูป</th>
+                <th>ชื่อ</th>
+                <th>อายุ</th>
+                <th>เบอร์</th>
+                <th>จัดการ</th>
+            </tr>
+        </thead>
+        <tbody id="patientTable"></tbody>
+    </table>
+</section>
+
+<!-- ================= NURSE RECORD ================= -->
+<section>
+    <h2>🧑‍⚕️ Nurse Record</h2>
+
+    <div class="form">
+        <select id="patientSelect">
+            <option value="">-- เลือกผู้ป่วย --</option>
+        </select>
+
+        <input type="text" id="vital" placeholder="Vital Signs (BP / PR / Temp)">
+        <input type="text" id="note" placeholder="บันทึกการพยาบาล">
+        <input type="text" id="nurse" placeholder="ชื่อพยาบาล">
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="Pain"> Pain</label>
+            <label><input type="checkbox" value="Risk GCS Drop"> Risk GCS Drop</label>
+            <label><input type="checkbox" value="Discharge Plan"> Discharge Plan</label>
+        </div>
+
+        <button onclick="addNurseRecord()">บันทึก</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ผู้ป่วย</th>
+                <th>Vital</th>
+                <th>บันทึก</th>
+                <th>วินิจฉัยทางการพยาบาล</th>
+                <th>พยาบาล</th>
+                <th>วันเวลา</th>
+            </tr>
+        </thead>
+        <tbody id="nurseTable"></tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
